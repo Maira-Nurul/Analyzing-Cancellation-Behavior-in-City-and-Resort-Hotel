@@ -1,4 +1,4 @@
---Nomor 3.1
+--Hotel Cancellation Rate
 SELECT 
     hotel,
     arrival_date_year,
@@ -7,8 +7,21 @@ FROM
     hotel_midterm hm 
 GROUP BY 
     hotel, arrival_date_year;
-    
--- Nomor 3.3
+
+--Average Lead Time and Total of Special Requests
+WITH
+  AvgLeadTime AS (
+    SELECT AVG(lead_time) AS overall_avg_lead_time
+    FROM hotel_midterm hm)
+
+ SELECT total_of_special_requests,
+        Round (AVG(lead_time), 0) AS average_lead_time
+ FROM hotel_midterm hm
+ WHERE lead_time > (SELECT overall_avg_lead_time FROM AvgLeadTime)
+ GROUP BY total_of_special_requests
+ ORDER BY total_of_special_requests;
+
+-- Average Total Revenue based on Dates
 SELECT 
     reservation_status_date,
     ROUND(AVG(adr), 3) AS average_total_revenue
@@ -21,35 +34,7 @@ GROUP BY
 ORDER BY 
     average_total_revenue DESC
 
-
-    
-SELECT 
-    total_of_special_requests,
-    ROUND(AVG(adr), 3) AS average_total_revenue
-FROM hotel_midterm
-WHERE 
-    reservation_status = 'Check-Out' 
-GROUP BY 
-    total_of_special_requests 
-ORDER BY 
-    average_total_revenue DESC
-    
-WITH stats AS (
-    SELECT 
-        COUNT(*) AS n,
-        SUM(lead_time) AS sum_x,
-        SUM(adr) AS sum_y,
-        SUM(lead_time * adr) AS sum_xy,
-        SUM(lead_time * lead_time) AS sum_x2,
-        SUM(adr * adr) AS sum_y2
-    FROM hotel_midterm
-)
-SELECT 
-    (n * sum_xy - sum_x * sum_y) / 
-    (sqrt((n * sum_x2 - sum_x * sum_x) * (n * sum_y2 - sum_y * sum_y))) AS correlation
-FROM stats;
-
---No 3.2
+-- Average Revenue based on Lead Time
 WITH
 LeadTimeGroups AS (
 SELECT
@@ -72,16 +57,4 @@ FROM LeadTimeGroups
 GROUP BY lead_time_range
 ORDER BY lead_time_range;
 
-SELECT COUNT(lead_time) FROM hotel_midterm hm ;
-
-
-WITH
-	AvgLeadTime AS (
-		SELECT AVG(lead_time) AS overall_avg_lead_time
-		FROM hotel_midterm hm)
-SELECT 	total_of_special_requests,
-	 	Round (AVG(lead_time), 0) AS average_lead_time
-FROM hotel_midterm hm
-WHERE lead_time > (SELECT overall_avg_lead_time FROM AvgLeadTime)
-GROUP BY total_of_special_requests
-ORDER BY total_of_special_requests;
+    
