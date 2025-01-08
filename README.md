@@ -26,7 +26,7 @@ Targeted SQL queries regarding various business questions can be found [here](ht
 
 <p align="center">
 <br/>
-<img src="" height="50%" width="50%">
+<img src="https://github.com/Maira-Nurul/Analyzing-Cancellation-Behavior-in-City-and-Resort-Hotel/blob/main/Docs2/Screenshot%202025-01-08%20155034.png" height="20%" width="20%">
 <br />
 
 Prior to analysis, data cleaning and standardization was performed to ensure data quality.  The pyhton code utilized can be found [here](https://github.com/Maira-Nurul/Analyzing-Cancellation-Behavior-in-City-and-Resort-Hotel/blob/main/City_and_Resort_Hotel.ipynb)
@@ -36,11 +36,11 @@ Prior to analysis, data cleaning and standardization was performed to ensure dat
 
 <p align="justify"> City Hotel cancellation rates are highly fluctuating, while Resort Hotel cancellations show a steady annual increase, indicating the need for improved system integration with Online Travel Agents and enhanced room management to reduce cancellations.  Special requests have minimal impact on lead time, suggesting hotels should focus on fulfilling these requests to enhance customer satisfaction and retention, regardless of booking timing.  Resort Hotels experience significant seasonal revenue variations, especially during holidays, whereas City Hotels maintain steady revenue throughout the year, highlighting the need for targeted promotions based on demand patterns.</p>
 
-Below is the overview page from pyhton visualization for data exploration and analysis.  The entire interactive visualizaiton can be seen here
+Below is the overview page from pyhton visualization for data exploration and analysis.  The entire visualizaiton can be seen [here](https://github.com/Maira-Nurul/Analyzing-Cancellation-Behavior-in-City-and-Resort-Hotel/blob/main/City_and_Resort_Hotel.ipynb)
 
 <p align="center">
 <br/>
-<img src="" height="70%" width="70%">
+<img src="https://github.com/Maira-Nurul/Analyzing-Cancellation-Behavior-in-City-and-Resort-Hotel/blob/main/Docs2/Screenshot%202025-01-08%20165303.png" height="70%" width="70%">
 <br />
 
 
