@@ -9,4 +9,5 @@ Insights and recommendation are provided on the following key areas:
 - <p align="justify"> Monthly trends in City and Resort hotel.  The project also evaluates monthly trends in City and Resort Hotels, analyzing sales patterns, revenue, reservation status, and room assignment issues.</p>
 
 Python visualization can be found [here](https://github.com/Maira-Nurul/Analyzing-Cancellation-Behavior-in-City-and-Resort-Hotel/blob/main/City_and_Resort_Hotel.ipynb)
+
 Targeted SQL queries regarding various business questions can be found 
